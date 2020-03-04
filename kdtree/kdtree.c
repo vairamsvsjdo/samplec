@@ -1,8 +1,15 @@
 #include<stdio.h>
 #include "kdtree.h"
   
-// const int k = 2; 
-  
+const int k = 2; 
+
+struct Node
+{
+    struct Node *left;
+    struct Node *right;
+    int value;
+};
+
 // // A structure to represent node of kd tree 
 // struct Node 
 // { 
@@ -107,6 +114,18 @@ int main()
   
     // int point2[] = {12, 19}; 
     // (search(root, point2))? cout << "Found\n": cout << "Not Found\n"; 
+
+    //structure referring structures
+    struct Node nodeA;
+    nodeA.value = 1;
+    struct Node nodeB;
+    nodeB.left = &nodeA;
+    nodeB.value = 2;
+    struct Node nodeC;
+    nodeC.left = &nodeB;
+    nodeC.value = 3;
+    nodeB.right = &nodeC;
+    printf("value in Node C: %d \n",(*(nodeB.right)).value);
     printf("hello KD\n");
   
     return 0; 
