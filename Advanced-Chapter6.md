@@ -155,6 +155,17 @@ EXTERN int nErrorValue
 
  #endif /* VARS_H */
 
+### Illustration:
+
+  Here,
+
+   * The variable extern shares the data between teo files.
+  
+   * twofile.h file used to include all header files.
+  
+   * define.h used to define the user defined variable. So, it first searches file in current directory.
+  
+(img src"https://photos.app.goo.gl/c77akuwAtd2DJ7Ei8")
 
 * __prototype statement:__
   
@@ -187,7 +198,6 @@ long lSomething);
 * It is used to maintain library files.
 
 * It performs the following functions:
-
 • Adds an object module to the library
 
 • Deletes an existing object module from the library
@@ -223,7 +233,6 @@ __Step 1:__
 __Step 2:__
 
 * Makefile have a target name before colon and this name haasa the dependency on the file that has declared after colon with one whitespace.
-S
   "target name": "Dependency file"
 
   Ex: hello: world
